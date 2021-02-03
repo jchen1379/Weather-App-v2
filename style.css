@@ -1,0 +1,169 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+*:focus {
+	outline: none;
+}
+
+body {
+	min-height: 100vh;
+	padding: 4vmin;
+	background: linear-gradient(rgb(47, 150, 163), rgb(48, 62, 143));
+	font-family: helvetica;
+	color: white;
+}
+
+.wrapper {
+	max-width: 1500px;
+	margin: auto;
+}
+
+.location-search-bar {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.location-search-city {
+	height: 2vmax;
+	width: 10vmax;
+	background: transparent;
+	border: 2px solid white;
+	border-radius: 4px;
+	color: white;
+	text-align: center;
+	font-size: 16px;
+}
+
+.location-search-city::placeholder {
+	color: white;
+	opacity: 0.7;
+	font-size: 16px;
+}
+
+.location-search-submit {
+	height: 2vmax;
+	width: 7vmax;
+	margin-left: 0.5vmax;
+	background-color: transparent;
+	border: 2px solid white;
+	border-radius: 4px;
+	color: white;
+	font-size: 16px;
+	ouline: none;
+	cursor: pointer;
+}
+
+.location-search-submit:active {
+	border: 2px solid lightgray;
+	color: lightgray;
+}
+
+.location-search-city::-webkit-inner-spin-button {
+	display: none;
+}
+
+
+.location-search-my-location img {
+	width: 30px;
+	cursor: pointer;
+}
+
+
+.weather-info {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	flex-wrap: wrap;
+	align-items: center;
+	margin-top: 5vmin;
+}
+
+
+.location {
+	font-size: 6vmin;
+}
+
+.weather-summary {
+	font-size: 2vmin;
+	margin-top: 3vmin;
+}
+
+.temperature {
+	font-size: 20vmin;
+	/* margin-left: 20vmin; */
+	cursor: pointer;
+}
+
+.weather-alert {
+	font-size: 2.5vmin;
+	margin-top: 20vmin;
+	line-height: 4vmin;
+}
+
+.weather-hourly {
+	display: flex;
+	justify-content: space-between;
+	overflow: scroll;
+	-ms-overflow-style: none;
+	scrollbar-width: none;
+}
+
+.weather-hourly::-webkit-scrollbar {
+	display: none;
+}
+
+
+.weather-hourly-info {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 100vmin;
+	margin: 20px;
+	font-size: 4vmin;
+}
+
+.weather-hourly-icon {
+	width: 10vmin;
+	margin-top: 2vmin;
+	margin-bottom: 2vmin;
+}
+
+.weather-daily {
+	display: flex;
+	flex-direction: column;
+	margin-top: 3vmin;
+}
+
+.weather-daily-info {
+	display: flex;
+	justify-content: space-between;
+	font-size: 3vmin;
+	height: 5vmin;
+	margin-top: 3vmin;
+	margin-buttom: 3vmin;
+}
+
+.weather-daily-day {
+	width: 20%;
+}
+
+.weather-daily-icon {
+	width: 10vmin;
+}
+
+.weather-daily-temperature-wrapper {
+	display: flex;
+	width: 20%;
+	justify-content: space-between;
+}
+
+.weather-daily-hi-temperature,
+.weather-daily-lo-temperature {
+	width: 6vmin;
+	text-align: center;
+}
