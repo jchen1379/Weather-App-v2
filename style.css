@@ -31,17 +31,17 @@ body {
 	height: 2vmax;
 	width: 10vmax;
 	background: transparent;
-	border: 2px solid white;
+	border: 3px solid white;
 	border-radius: 4px;
 	color: white;
 	text-align: center;
-	font-size: 16px;
+	font-size: 1vmax;
 }
 
 .location-search-city::placeholder {
 	color: white;
 	opacity: 0.7;
-	font-size: 16px;
+	font-size: 1vmax;
 }
 
 .location-search-submit {
@@ -49,10 +49,10 @@ body {
 	width: 7vmax;
 	margin-left: 0.5vmax;
 	background-color: transparent;
-	border: 2px solid white;
+	border: 3px solid white;
 	border-radius: 4px;
 	color: white;
-	font-size: 16px;
+	font-size: 1vmax;
 	ouline: none;
 	cursor: pointer;
 }
@@ -68,7 +68,7 @@ body {
 
 
 .location-search-my-location img {
-	width: 30px;
+	width: 2vmax;
 	cursor: pointer;
 }
 
