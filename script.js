@@ -1,6 +1,6 @@
 window.addEventListener('load', () => {
-    let long;
-    let lat;
+    let long = -118.243683;
+    let lat = 34.052235;
     let location = document.querySelector('.location');
     let weatherSummary = document.querySelector('.weather-summary');
     let weatherTemperature = document.querySelector('.temperature');
@@ -27,6 +27,8 @@ window.addEventListener('load', () => {
 			render(long, lat, null)
         })
     }
+	
+	render(long, lat, null)
 	
 	weatherTemperature.addEventListener('click', () => updateTemperatureUnit(dataFromAPI));
 			
