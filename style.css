@@ -27,9 +27,9 @@ body {
 	align-items: center;
 }
 
-.location-search-city {
-	height: 2vmax;
-	width: 10vmax;
+.location-search-city, .location-search-submit {
+	height: 3vmax;
+	width: 12vmax;
 	background: transparent;
 	border: 3px solid white;
 	border-radius: 4px;
@@ -42,17 +42,12 @@ body {
 	color: white;
 	opacity: 0.7;
 	font-size: 1vmax;
+	line-height: 2vmax;
 }
 
 .location-search-submit {
-	height: 2vmax;
-	width: 7vmax;
-	margin-left: 0.5vmax;
-	background-color: transparent;
-	border: 3px solid white;
-	border-radius: 4px;
-	color: white;
-	font-size: 1vmax;
+	width: 8vmax;
+	margin-left: 1vmin;
 	ouline: none;
 	cursor: pointer;
 }
