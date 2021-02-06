@@ -168,3 +168,10 @@ body {
 	width: 6vmin;
 	text-align: center;
 }
+
+
+.footer{
+	text-align: center;
+	font-size: 2vmin;
+	margin-top: 30vmin;
+}
