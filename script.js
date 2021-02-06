@@ -2,6 +2,7 @@ window.addEventListener('load', () => {
 	let long = -118.243683;
 	let lat = 34.052235;
 	let location = document.querySelector('.location');
+	let zipcodeError = document.querySelector('.zipcode-error-message');
 	let weatherSummary = document.querySelector('.weather-summary');
 	let weatherTemperature = document.querySelector('.temperature');
 	let weatherAlert = document.querySelector(".weather-alert");
@@ -21,14 +22,6 @@ window.addEventListener('load', () => {
 	let dataFromAPI;
 
 	let temperatureUnit = '\u00B0F';
-
-	// fetch('https://cors-anywhere.herokuapp.com/https://zipcode-geolocation-api.herokuapp.com/api/zipcode/31322')
-	//     .then(res => {
-	//         return res.text()
-	//     })
-	//     .then(data => {
-	//         console.log(data)
-	//     })
 
 	if (navigator.geolocation) {
 		navigator.geolocation.getCurrentPosition(position => {
@@ -51,6 +44,11 @@ window.addEventListener('load', () => {
 			locationSearchSubmit.click();
 		}
 	})
+	
+	locationSearchCity.addEventListener('focus', () => {
+		locationSearchCity.value = '';
+		zipcodeError.textContent = '';
+	});
 
 	function render(long, lat, city) {
 		api =
@@ -132,20 +130,23 @@ window.addEventListener('load', () => {
 		const zipcode = locationSearchCity.value;
 		api =
 			`https://app.zipcodebase.com/api/v1/search?apikey=26436530-6642-11eb-b787-4d04f7ef9ea4&codes=${zipcode}&country=US`;
-		console.log(api);
 
 		fetch(api)
 			.then(response => {
 				return response.json();
 			})
 			.then(data => {
-				const {
-					longitude,
-					latitude,
-					city,
-					state_code
-				} = data.results[zipcode][0];
-				render(longitude, latitude, `${city}, ${state_code}`);
+				if(data.results.length === 0){
+					zipcodeError.textContent = "Invalid Zipcode!"
+				}else{
+					const {
+						longitude,
+						latitude,
+						city,
+						state_code
+					} = data.results[zipcode][0];
+					render(longitude, latitude, `${city}, ${state_code}`);
+				}
 			})
 	}
 

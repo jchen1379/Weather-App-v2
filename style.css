@@ -24,7 +24,11 @@ body {
 .location-search-bar {
 	display: flex;
 	justify-content: space-between;
-	align-items: center;
+}
+
+.location-search-bar-left{
+	display: flex;
+	justify-content: space-between;
 }
 
 .location-search-city, .location-search-submit {
@@ -62,6 +66,15 @@ body {
 	display: none;
 }
 
+.zipcode-error-message{
+	width: 12vmax;
+	margin-left: 0.5vmin;
+	font-size: 1.5vmax;
+	text-align: center;
+	line-height: 3.3vmax;
+	font-weight: bold;
+	color: lightcoral;
+}
 
 .location-search-my-location img {
 	width: 2vmax;
