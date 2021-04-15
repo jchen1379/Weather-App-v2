@@ -1,4 +1,7 @@
 window.addEventListener('load', () => {
+	
+	createPageLayout();
+	
 	let long = -118.243683;
 	let lat = 34.052235;
 	let location = document.querySelector('.location');
@@ -222,6 +225,62 @@ window.addEventListener('load', () => {
 			return Math.floor(temp)
 		}
 		return Math.floor((temp - 32) * 5 / 9);
+	}
+	
+	
+	function createPageLayout(){
+		let hourlyInfoContainer = document.querySelector(".weather-hourly");
+		let dailyInfoContainer = document.querySelector(".weather-daily");
+		
+		for(let i = 0; i < 23; i++){
+			let infoDiv = document.createElement("div");
+			infoDiv.classList.add("weather-hourly-info");
+			
+			let timeDiv = document.createElement("div");
+			timeDiv.classList.add("weather-hourly-time");
+			
+			let iconCanvas = document.createElement("canvas");
+			iconCanvas.classList.add("weather-hourly-icon");
+			
+			let temperatureDiv = document.createElement("div");
+			temperatureDiv.classList.add("weather-hourly-temperature");
+			
+			infoDiv.appendChild(timeDiv);
+			infoDiv.appendChild(iconCanvas);
+			infoDiv.appendChild(temperatureDiv);
+			
+			hourlyInfoContainer.appendChild(infoDiv);
+		}
+		
+		for(let i = 0; i < 7; i++){
+			let infoDiv = document.createElement("div");
+			infoDiv.classList.add("weather-daily-info");
+			
+			let timeDiv = document.createElement("div");
+			timeDiv.classList.add("weather-daily-day");
+			
+			let iconCanvas = document.createElement("canvas");
+			iconCanvas.classList.add("weather-daily-icon");
+			
+			let temperatureDiv = document.createElement("div");
+			temperatureDiv.classList.add("weather-daily-temperature-wrapper");
+			
+			let temperatureHiDiv = document.createElement("div");
+			temperatureHiDiv.classList.add("weather-daily-hi-temperature");
+			
+			let temperatureLoDiv = document.createElement("div");
+			temperatureLoDiv.classList.add("weather-daily-lo-temperature");
+			
+			temperatureDiv.appendChild(temperatureHiDiv);
+			temperatureDiv.appendChild(temperatureLoDiv);
+			
+			
+			infoDiv.appendChild(timeDiv);
+			infoDiv.appendChild(iconCanvas);
+			infoDiv.appendChild(temperatureDiv);
+			
+			dailyInfoContainer.appendChild(infoDiv);
+		}
 	}
 
 
